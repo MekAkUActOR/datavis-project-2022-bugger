@@ -12,7 +12,7 @@
 
 **10% of the final grade**
 
-[Milestone 1 - Report](milestones/milestone1.md)
+[Milestone 1 - Report](milestones/milestone1.pdf)
 
 ## Milestone 2 (6th May, 5pm)
 
@@ -24,10 +24,18 @@
 **80% of the final grade**
 
 
-Our repository has the following structure:
-* `exploratory_data_analysis` directory: contains python notebook file to do exploratory data analysis
-* `milestones` directory: contains our reports for [milestone 1](milestones/milestone1.md)
-* `dataset` contains images that were embed in the first two milestones
+## Project structure
+
+```
+- datasets
+  - medals1986_2020.csv             # dataset for Olympics from 1896 to 2020
+  - medals2022.csv                  # dataset for Beijing 2022 Winter Olympics
+  - country_capital.csv             # aided dataset for data geographical analysis, containing (country, capital) couples
+- exploratory_data_analysis
+  - data_analysis.ipynb             # exploartory data analysis in Python
+- milestones
+  - milestone1.pdf                  # our report for milestone 1
+```
 
 
 ## Late policy

@@ -12,9 +12,9 @@
 
 ```
 - datasets
+  - country_capital.csv             # aided dataset for data geographical analysis, containing (country, capital) couples
   - medals1986_2020.csv             # dataset for Olympics from 1896 to 2020
   - medals2022.csv                  # dataset for Beijing 2022 Winter Olympics
-  - country_capital.csv             # aided dataset for data geographical analysis, containing (country, capital) couples
 - exploratory_data_analysis
   - data_analysis.ipynb             # exploartory data analysis in Python
 - milestones

@@ -8,7 +8,7 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Project structure
+## Project Structure
 
 ```
 - datasets
@@ -27,6 +27,18 @@
 **10% of the final grade**
 
 [Milestone 1 - Report](milestones/milestone1.pdf)
+
+To run our exploratory data analysis notebook, the following libraries are needed:
+```
+- csv
+- itertools
+- geopy.geocoders
+- matplotlib
+- math
+- mpl_toolkits.basemap
+- numpy
+- pandas
+```
 
 ## Milestone 2 (6th May, 5pm)
 

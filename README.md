@@ -33,8 +33,8 @@ To run our exploratory data analysis notebook, the following libraries are neede
 - csv
 - itertools
 - geopy.geocoders
-- matplotlib
 - math
+- matplotlib
 - mpl_toolkits.basemap
 - numpy
 - pandas
@@ -52,7 +52,3 @@ To run our exploratory data analysis notebook, the following libraries are neede
 
 
 
-## Late policy
-
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone

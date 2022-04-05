@@ -4,7 +4,7 @@
 | -------------- | ------ |
 | Liu Haowen | 341790 |
 | Sun Haoxin | 336556 |
-| Wu Yujie | 000000 |
+| Wu Yujie | 334899 |
 
 [Milestone 1](milestones/milestone1.pdf) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 

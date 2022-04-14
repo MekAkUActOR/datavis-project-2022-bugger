@@ -1,0 +1,113 @@
+body.oldest {
+  background-image: url("../../img/scroll.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "MedievalSharp", cursive;
+  color: #2d1305;
+}
+
+body.older {
+  background-image: url("../../img/old_page.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Berkshire Swash", cursive;
+}
+
+body.old {
+  background-image: url("../../img/old.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Goudy Bookletter 1911", serif;
+}
+
+body {
+  background-color: #bebebe;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  font-family: "Libre Caslon Text", serif;
+  font-size: 22px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  font-family: "Montserrat";
+  font-size: 22px;
+  display: none;
+}
+
+.grid-container {
+  display: grid;
+  /*width: 100vw;
+  height:80vh;*/
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . . ."
+    ". Basic-Info Basic-Info Basic-Info Image ."
+    ". Basic-Info Basic-Info Basic-Info Image ."
+    ". Summary Summary Summary Summary ."
+    ". . . . . .";
+}
+
+.Image {
+  grid-area: Image;
+  /*border:0.75em black solid;*/
+  overflow: hidden;
+  /*align-items: right*/
+  /*object-fit: fill;*/
+}
+
+img.loading {
+  max-width: 100%;
+
+  /*background: transparent url(loading.gif) no-repeat scroll center center;*/
+}
+
+.Basic-Info {
+  grid-area: Basic-Info;
+}
+
+.Summary {
+  grid-area: Summary;
+}
+
+a {
+  color: #8d500a;
+}
+a:visited {
+  color: #8d500a;
+}
+
+a.morelink {
+  text-decoration: none;
+  outline: none;
+}
+.morecontent span {
+  display: none;
+}
+
+.oldest_placeholder {
+  color: #77492f;
+}
+
+.older_placeholder {
+  color: #621d1d;
+}
+
+.old_placeholder {
+  color: #5c3722;
+}
+
+.placeholder {
+  color: #642603;
+}

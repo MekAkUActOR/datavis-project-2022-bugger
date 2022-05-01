@@ -43,8 +43,10 @@ To run our exploratory data analysis notebook, the following libraries are neede
 ## Milestone 2 (6th May, 5pm)
 
 **10% of the final grade**
-To run our exploratory
-- os
+
+[Milestone 2 - Report]
+
+To check our prototype website design, check the following:
 
 ## Milestone 3 (3rd June, 5pm)
 

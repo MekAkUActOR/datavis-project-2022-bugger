@@ -6,7 +6,7 @@
 | Sun Haoxin | 336556 |
 | Wu Yujie | 334899 |
 
-[Milestone 1](milestones/milestone1.pdf) • [Milestone 2]((milestones/milestone1.pdf)) • [Milestone 3](#milestone-3)
+[Milestone 1](milestones/milestone1.pdf) • [Milestone 2](milestones/milestone2.pdf) • [Milestone 3](#milestone-3)
 
 ## Project Structure
 

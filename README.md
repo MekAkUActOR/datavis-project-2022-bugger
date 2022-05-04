@@ -59,7 +59,7 @@ To run our exploratory data analysis notebook, the following libraries are neede
 [Milestone 2 - Report](milestones/milestone2.pdf)
 
 To check our prototype website design, see the following:
-please NOTE: page2.html cannot directly access the local csv file, use WebStorm to open and view this page (further improvement in Milestone 3)
+(please NOTE: page2.html cannot directly access the local csv file, use WebStorm to open and view this page (further improvement in Milestone 3))
 ```
 - skeleton                         
   - index.html                      # basic information about Winter Olympics

@@ -2,20 +2,16 @@ function inittext () {
 	var showChar = 200;
 	var ellipsestext = ".......";
 	var moretext = "read more";
-	var lesstext = "read less";
+	var lesstext = "roll back";
 	$('.more').each(function () {
 		var content = $(this).html();
-
 		if (content.length > showChar) {
-
 			var c = content.substr(0, showChar);
 			var h = content.substr(showChar, content.length - showChar);
 
 			var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
-
 			$(this).html(html);
 		}
-
 	});
 
 	$(".morelink").click(function () {

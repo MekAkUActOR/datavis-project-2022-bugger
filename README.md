@@ -60,7 +60,7 @@ To run our exploratory data analysis notebook, the following libraries are neede
 
 To check our prototype website design, see the following:
 ```
-- skeleton                          # source code for our design
+- skeleton                         
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
   - page3.html                      # statistical data

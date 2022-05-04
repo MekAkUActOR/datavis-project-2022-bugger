@@ -6,7 +6,7 @@
 | Sun Haoxin | 336556 |
 | Wu Yujie | 334899 |
 
-[Milestone 1](milestones/milestone1.pdf) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 1](milestones/milestone1.pdf) • [Milestone 2](milestones/milestone2.pdf) • [Milestone 3](#milestone-3)
 
 ## Project Structure
 
@@ -19,6 +19,18 @@
   - data_analysis.ipynb             # exploartory data analysis in Python
 - milestones
   - milestone1.pdf                  # our report for milestone 1
+  - milestone2.pdf                  # our report for milestone 2
+- skeleton                          # source code for our design
+  - assets                          
+  - image                           # images needed for the website
+  - images
+  - img
+  - scripts
+  - style
+  - athleteInformation.csv
+  - index.html                      # basic information about Winter Olympics
+  - page2.html                      # interactive map
+  - page3.html                      # statistical data
 ```
 
 
@@ -44,9 +56,17 @@ To run our exploratory data analysis notebook, the following libraries are neede
 
 **10% of the final grade**
 
-[Milestone 2 - Report]
+[Milestone 2 - Report](milestones/milestone2.pdf)
 
-To check our prototype website design, check the following:
+To check our prototype website design, see the following:
+(**NOTE**: page2.html requires the dataset (.csv file), please use *WebStorm* to open and view this page (we will make further improvement in Milestone 3, e.g. upload these pages on github.io))
+```
+- skeleton                         
+  - index.html                      # basic information about Winter Olympics
+  - page2.html                      # interactive map
+  - page3.html                      # statistical data
+```
+
 
 ## Milestone 3 (3rd June, 5pm)
 

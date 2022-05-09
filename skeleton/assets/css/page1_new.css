@@ -40,7 +40,7 @@
     height:400px;
     position: relative;
     left: 900px;
-    top: 160px;
+    top: -50px;
 }
 .card3{
     background-color: white;
@@ -48,7 +48,7 @@
     height:400px;
     position: relative;
     left: 10px;
-    top:220px;
+    top:-150px;
 }
 
 
@@ -57,66 +57,94 @@
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
-    top: 1380px;
-    left: 1000px;
+    top: 1380px;*/
+    position: relative;
+    top: -220px;
+    left: 900px;
 }
 .instruction2{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
-    top: 1850px;
-    left: 180px;
+    top: 1850px;*/
+    position: relative;
+    top: -360px;
+    left: 10px;
 }
 .instruction3{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
-    top: 2250px;
-    left: 1000px;
+    top: 2250px;*/
+    position: relative;
+    top: -520px;
+    left: 900px;
 }
 
 .instruction4{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
-    top: 2850px;
-    left: 180px;
+    top: 2850px;*/
+    position: relative;
+    top: -360px;
+    left: 10px;
 }
 .instruction5{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
     top: 2850px;
-    left: 1000px;
+    left: 1000px;*/
+    position: relative;
+    top: -620px;
+    left: 900px;
 }
 .instruction6{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
     top: 3000px;
-    left: 180px;
+    left: 180px;*/
+    position: relative;
+    top: -1340px;
+    left: 10px;
 }
 .instruction7{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
     top: 3850px;
-    left: 1000px;
+    left: 1000px;*/
+    position: relative;
+    top: -4600px;
+    left: 900px;
 }
 .instruction8{
     width: 700px;
     color: black;
     font-size:25px;
+    /*
     position: absolute;
     top: 3350px;
-    left: 1000px;
+    left: 1000px;*/
+    position: relative;
+    top: -600px;
+    left: 900px;
     background-color: white;
     height:400px;
 }
@@ -173,18 +201,25 @@ button{
     width: 700px;
     color: black;
     font-size:60px;
+    /*
     position: absolute;
-    top: 2650px;
-    left: 190px;
+    top: 2650px;*/
+    position: relative;
+    top: -400px;
+    left: 10px;
 }
 
 #winter_events{
     width: 700px;
     color: black;
     font-size:60px;
+    /*
     position: absolute;
     top: 2650px;
-    left: 1000px;
+    left: 1000px;*/
+    position: relative;
+    top: -660px;
+    left: 900px;
 }
 
 
@@ -335,4 +370,55 @@ button{
 }
 .instruction7 img {
     width: 300px;
+}
+
+
+
+
+/* Styles for details html*/
+.details_title {
+    background-image: url("../../images/title_background.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height:400px;
+    position: relative;
+    top:0px;
+}
+.details_title h3 {
+    color: white;
+}
+.details_card{
+    background-color: white;
+    width: 400px;
+    height:400px;
+    position: absolute;
+    left: 10px;
+    top:450px;
+}
+.details_instruction{
+    background-color: white;
+    width: 1400px;
+    height:400px;
+    position: absolute;
+    left: 500px;
+    top:450px;
+}
+.details_instruction h4{
+    font-size: 40px;
+}
+.details_instruction table{
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+    font-size: 30px;
+    color: darkblue;
+}
+.details_instruction td{
+    width: 200px;
+}
+.details_instruction p{
+    color: black;
 }

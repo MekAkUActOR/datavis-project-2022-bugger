@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/leaflet-sidebar.css" />
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li class="active"><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="index.html" role="tab" title="Home"><i class="fas fa-home"></i></a></li>
+                <li><a href="page3.html" role="tab" title="Data Analysis"><i class="fa fa-database"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-content">
+            <div class="sidebar-pane active" id="home">
+                <h1 class="sidebar-header">
+                    Athlete Map
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p>A reactive map of winter sports athletes based on data from
+                    <a href="https://www.kaggle.com/">Kaggle</a> and <a href="https://wikipedia.org">Wikipedia</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="map-holder" class="sidebar-map"></div>
+
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="assets/js/leaflet-sidebar.js"></script>
+    <script src="assets/js/athletemap.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3T47SJZ13"></script>
+</body>
+
+</html>

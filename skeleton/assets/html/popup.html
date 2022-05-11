@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Eagle+Lake&family=Rochester&family=MedievalSharp&family=Libre+Caslon+Text&family=Goudy+Bookletter+1911&display=swap"
+			rel="stylesheet">
+	</head>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="../js/popupscript.js"></script>
+	<script>
+		function init() {
+			window.parent.setUpFrame();
+			return true;
+		}
+
+		function toTitleCase(str) {
+			return str.replace(
+				/\w\S*/g,
+				function (txt) {
+					return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+				}
+			);
+		}
+		function populate(arg) {
+			var name = arg.athlete_name;
+			var byear = arg.slug_game.split("-")[0];
+			var event = arg.event
+			var medal = arg.medal_type
+			var bplace = arg.country;
+			var occupation = toTitleCase(arg.discipline);
+
+			if (!bplace) {
+				bplace = "N/A";
+			}
+			if (!byear) {
+				byear = "N/A";
+			}
+
+
+			var body = document.getElementById("body");
+			if (byear != 'N/A')
+				if (parseInt(byear) < 1000) {
+					byear = parseInt(byear.replace('-', '')) + ' B.C';
+					body.className = "oldest";
+					document.getElementsByClassName("placeholder").className = ".oldest_placeholder ";
+				}
+				else if (parseInt(byear) < 1500) {
+					byear = parseInt(byear);
+					body.className = "older";
+					document.getElementsByClassName("placeholder").className = ".older_placeholder ";
+				}
+				else if (parseInt(byear) < 1900) {
+					byear = parseInt(byear);
+					body.className = "old";
+					document.getElementsByClassName("placeholder").className = ".old_placeholder ";
+				}
+				else {
+					byear = parseInt(byear);
+				}
+
+			document.getElementById("name").innerHTML = name;
+			document.getElementById("eve").innerHTML = event;
+			document.getElementById("med").innerHTML = medal;
+			document.getElementById("yob").innerHTML = byear;
+			document.getElementById("pob").innerHTML = bplace;
+			document.getElementById("occ").innerHTML = occupation;
+			document.getElementById("about").innerHTML = arg.summary;
+			document.getElementById("img").src = arg.pic;
+
+			inittext();
+		}
+
+
+	</script>
+
+	<link rel="stylesheet" href="../css/style_popup.css">
+
+	<body onload="init();" id="body">
+		<div class="scrollable">
+
+			<div class="grid-container">
+				<div class="Image">
+					<img id="img" class="loading" loading='lazy' align='right' src="../../img/Olympic_flag.svg" />
+				</div>
+				<div class="Basic-Info">
+					<span id="name" style="font-size: 45px; font-weight:bold;"> Tiril ECKHOFF </span>
+					<br>
+					<br>
+					<span id="occ"> Biathlon </span>
+					<br>
+					<br>
+					<b class="placeholder">Place of Birth:</b> <span id="pob"> Norway </span>
+					<br>
+					<br>
+					<b class="placeholder">Year of Game:</b> <span id="yob"> 2022 </span>
+					<br>
+					<br>
+					<b class="placeholder">Event:</b> <span id="eve"> Mixed Relay 4x6km (W+M) </span>
+					<br>
+					<br>
+					<b class="placeholder">Medal:</b> <span id="med"> GOLD </span>
+					<br>
+					<br>
+				</div>
+				<div class="Summary">
+					<div id="about" class="comment more" align="justify"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

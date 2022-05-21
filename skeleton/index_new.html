@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/page1.js"></script>
     <title>Winter Olympic Games Introductions</title>
     <link rel="stylesheet" href="assets/css/page1_new.css" />
 </head>
@@ -10,7 +12,7 @@
 <div class="container">
 
   <div class="navbar">
-    <img src="./image/olympic_icon.png" class='logo'>
+    <img src="./images/olympic_icon.png" class='logo'>
     <nav>
       <ul>
         <li><a href="#introduction">Introduction</a></li>
@@ -39,8 +41,8 @@
 
 
   <h2 id="introduction"><br>Introduction</h2>
-
-  <div class="card1" id="card-1"><img src="images/banner.jpg" alt="Winter Olympics" width="730" height="380"/></div>
+<!--
+  <div class="card1" id="card-1"><img src="images/introduction.jpg" alt="Winter Olympics" width="730" height="380"/></div>
   <h5 class="instruction1">The Winter Olympic Games are the largest winter sporting celebration in terms of the number of sports on the programme, the number of athletes present and the number of people from different nations gathered together at the same time, in the same place, in the spirit of friendly competition.</h5>
 
   <div class="card2" id="card-2"><img src="images/olympic_spirit.webp" alt="True Olympic Spirit" width="730" height="380"/></div>
@@ -48,6 +50,29 @@
 
   <div class="card3" id="card-3"><img src="images/olympic_unity.jpg" alt="All about unity, breaking barriers" width="730" height="380"/></div>
   <h5 class="instruction3">The Winter Olympic Games are the world's most powerful symbol of unity in all our diversity, with the participation of teams from more than 90 National Olympic Committees and the IOC Refugee Olympic Team. They send a powerful message of diversity, inclusion and non-discrimination as athletes from all races, religions, ethnicities and cultures compete with each other and live together in harmony in the Olympic Village.</h5>
+-->
+
+  <div id="imgList_wrapper">
+    <div class="imgList_container">
+      <ul class="imgList">
+        <li>
+          <img src="./images/introduction.jpeg" alt="">
+        </li>
+        <li>
+          <img src="./images/olympic_spirit.jpeg" alt="">
+        </li>
+        <li><img src="./images/olympic_unity.jpg" alt=""></li>
+      </ul>
+      <img src="./images/array_left.jpg" width="40px" height="60px" class="imgList_pre">
+      <img src="./images/array_right.jpg" width="40px" height="60px" class="imgList_next">
+      <ul class="dollList">
+        <li class="sec"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+
 
 
   <h2 id="past_games"><br>Past Games</h2>

@@ -76,17 +76,10 @@ function f() {
             type:'radar',
             data:{
                 labels: [
-                    'Alpine Skiing',
-                    'Freestyle Skiing',
-                    'Sleeping',
-                    'Designing',
-                    'Coding',
-                    'Cycling',
-                    'Running'
+                    'gold', 'silver', 'bronze'
                 ],
                 datasets: [{
-
-                    data: [74, 12, 90, 81, 56, 55, 40],
+                    data: [60, 45, 49],
                     fill: true,
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgb(255, 99, 132)',
@@ -96,12 +89,13 @@ function f() {
                     pointHoverBorderColor: 'rgb(255, 99, 132)'
 
                 }],
+
             },
             options:{
                 plugins:{
                     title: {
                         display: true,
-                        text: 'All-time Winter Olympic Games Golden Medal by country',
+                        text: 'Medal by Discipline',
                         font:{size:20},
                         padding: {
                             top: 40
@@ -128,17 +122,152 @@ function f() {
             type:'radar',
             data:{
                 labels: [
-                    'Eating',
-                    'Drinking',
-                    'Sleeping',
-                    'Designing',
-                    'Coding',
-                    'Cycling',
-                    'Running'
+                    'Biathlon', 'Cross Country Skiing', 'Freestyle Skiing', 'Short Track Speed Skating', 'Ski Jumping', 'Speed Skating', 'Luge', 'Snowboard', 'Alpine Skiing', 'Figure Skating', 'Short Track Speed Skating', 'Curling', 'Nordic Combined', 'Skeleton', 'Bobsleigh', 'Ice Hockey'],
+
+                datasets: [{
+
+                    data: [1, 0, 12, 0, 5, 0, 6, 0, 14, 74, 0, 0, 2, 2, 3, 32],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+
+                }],
+
+            },
+            options:{
+                plugins:{
+                    title: {
+                        display: true,
+                        text: 'All Kinds of Medal',
+                        font:{size:20},
+                        padding: {
+                            top:40
+                        }
+                    },
+                    legend:{
+                        display: false,
+                        position:'right'
+                    }
+                },
+                layout:{
+                    padding:{
+                        right:0,
+                        left:50,
+                        bottom:0,
+                        top:0
+                    }
+
+                },
+
+            }
+        });
+        let CountryChart5 = new Chart(myChart5,{
+            type:'doughnut',
+            data:{
+                labels: [
+                    'Women',
+                    'Men'
                 ],
                 datasets: [{
-                    
-                    data: [65, 59, 90, 81, 56, 55, 40],
+                    label: 'My First Dataset',
+                    data: [51,95],
+                    fill: true,
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }],
+            },
+            options:{
+                plugins:{
+                    title: {
+                        display: true,
+                        text: 'Olympic Games Golden Medal by country',
+                        font:{size:20},
+                        padding: {
+                            top: 40
+                        }
+                    },
+                    legend:{
+                        display: false,
+                        position:'right'
+                    }
+                },
+                layout:{
+                    padding:{
+                        right:0,
+                        left:50,
+                        bottom:0,
+                        top:0
+                    }
+
+                },
+
+            }
+        });
+    }
+    if (countryName=='Canada') {
+        let CountryChart3 = new Chart(myChart3,{
+            type:'radar',
+            data:{
+                labels: [
+                    'gold', 'silver', 'bronze'
+                ],
+                datasets: [{
+                    data: [90, 59, 86],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+
+                }],
+
+            },
+            options:{
+                plugins:{
+                    title: {
+                        display: false,
+                        text: 'Medal by Discipline',
+                        font:{size:20},
+                        padding: {
+                            top: 10
+                        }
+                    },
+                    legend:{
+                        display: false,
+                        position:'right'
+                    }
+                },
+                layout:{
+                    padding:{
+                        right:0,
+                        left:50,
+                        bottom:0,
+                        top:0
+                    }
+
+                },
+
+            }
+        });
+        let CountryChart4 = new Chart(myChart4,{
+            type:'radar',
+            data:{
+                labels: [
+                    'Biathlon', 'Cross Country Skiing', 'Freestyle Skiing', 'Short Track Speed Skating', 'Ski Jumping', 'Speed Skating', 'Luge', 'Snowboard', 'Alpine Skiing', 'Figure Skating', 'Short Track Speed Skating', 'Curling', 'Nordic Combined', 'Skeleton', 'Bobsleigh', 'Ice Hockey'],
+
+                datasets: [{
+
+                    data: [ 3, 0, 32, 24, 4, 34, 4, 1, 18, 12, 0, 24, 7, 0, 4, 19, 23],
                     fill: true,
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgb(255, 99, 132)',
@@ -153,7 +282,7 @@ function f() {
                 plugins:{
                     title: {
                         display: true,
-                        text: 'All-time Winter Olympic Games Golden Medal by country',
+                        text: 'All Kinds of Medal',
                         font:{size:20},
                         padding: {
                             top: 40
@@ -177,28 +306,22 @@ function f() {
             }
         });
         let CountryChart5 = new Chart(myChart5,{
-            type:'radar',
+            type:'doughnut',
             data:{
                 labels: [
-                    'Eating',
-                    'Drinking',
-                    'Sleeping',
-                    'Designing',
-                    'Coding',
-                    'Cycling',
-                    'Running'
+                    'Women',
+                    'Men'
                 ],
                 datasets: [{
                     label: 'My First Dataset',
-                    data: [65, 59, 90, 81, 56, 55, 40],
+                    data: [110,90],
                     fill: true,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    pointBackgroundColor: 'rgb(255, 99, 132)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(255, 99, 132)'
-
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
                 }],
             },
             options:{
@@ -208,7 +331,7 @@ function f() {
                         text: 'Olympic Games Golden Medal by country',
                         font:{size:20},
                         padding: {
-                            top: 40
+                            top: 60
                         }
                     },
                     legend:{

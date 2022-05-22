@@ -25,58 +25,7 @@
     padding-right: 2%;
     box-sizing: border-box;
 }
-.card1{
-    background-color: white;
-    width: 750px;
-    height:400px;
-    position: relative;
-    left: 10px;
-    top:100px;
-}
-.card2{
-    background-color: white;
-    backface-visibility: visible;
-    width: 750px;
-    height:400px;
-    position: relative;
-    left: 900px;
-    top: -50px;
-}
-.card3{
-    background-color: white;
-    width: 750px;
-    height:400px;
-    position: relative;
-    left: 10px;
-    top:-150px;
-}
 
-
-
-.instruction1{
-    width: 700px;
-    color: black;
-    font-size:25px;
-    position: relative;
-    top: -220px;
-    left: 900px;
-}
-.instruction2{
-    width: 700px;
-    color: black;
-    font-size:25px;
-    position: relative;
-    top: -360px;
-    left: 10px;
-}
-.instruction3{
-    width: 700px;
-    color: black;
-    font-size:25px;
-    position: relative;
-    top: -520px;
-    left: 900px;
-}
 
 .instruction4{
     width: 85%;
@@ -192,7 +141,7 @@ button{
     color: black;
 }
 .instruction7 img {
-    width: 300px;
+    width: 250px;
 }
 
 

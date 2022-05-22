@@ -6,19 +6,21 @@
 }
 
 .navbar{
-    height: 12%;
+    margin-left: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
-    width: 100%;
+   /* width: 100%;*/
     background: white;
-    margin: 10px;
+
 
 }
 .logo{
-    position: relative;
+
     width: 100px;
-    left: 20px;
+    left: 50px;
     cursor: pointer;
+
 }
 nav ul li{
     list-style: none;
@@ -30,15 +32,14 @@ nav ul li a{
     color: black;
     font-size: 20px;
 }
+
 .intro{
     width: 100%;
-    height: 300px;
+    height: 850px;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(image/Olympics.webp);
     background-position: center;
     background-size:cover;
     text-align: center;
-
-
     /*
     margin-left: 20px;
     margin-right: 20px;
@@ -64,19 +65,20 @@ p{
 
 }
 .bar{
-    background: white;
+    background: transparent;
     color: black;
     width: 100%;
     height: 500px;
-    margin:10px;
+    position: relative;
+    top: 120px;
+   /* margin:10px;*/
     display: flex;
     flex-direction: row;
-
 }
 .country{
-    background: antiquewhite;
+    background: whitesmoke;
     color: black;
-    width: 100%;
+    width: 90%;
     margin: 10px 10px;
     height: 500px;
     display: flex;
@@ -84,9 +86,9 @@ p{
 
 }
 .discipline{
-    background: antiquewhite;
+    background: whitesmoke;
     color: black;
-    width: 100%;
+    width: 90%;
     margin: 10px ;
     display: flex;
     height: 500px;
@@ -103,11 +105,11 @@ p{
 .searchbox{
     width: 100%;
     height: 700px;
-    background:antiquewhite;
+    background:whitesmoke;
     background-size:cover;
-    margin-top:20px;
-    margin-left: 20px;
     vertical-align: middle;
+    position: relative;
+    top: 50px;
 }
 h3{
     font-family: 'Lato', sans-serif;
@@ -118,7 +120,7 @@ h3{
 
 }
 
-.boxContainer{
+.Container{
     margin: auto;
     background: white;
     position: relative;
@@ -134,7 +136,7 @@ h3{
     height: 100%;
     vertical-align: middle;
 }
-.search{
+.searchButton{
     border:none;
     height: 90%;
     width: 90%;
@@ -153,3 +155,107 @@ h3{
     color:#2980b9
 
 }
+/*------------------------公共样式表----------------------------*/
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+a {
+    text-decoration: none;
+}
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-align {
+    display: flex;
+    align-items: center;
+}
+.center-justify {
+    display: flex;
+    justify-content: center;
+}
+.center-spacearound {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*------------------------本项目公共样式----------------------------*/
+
+
+#container {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.sea-container {
+    width: 450px;
+    height: 30px;
+    background-color: white;
+    margin: 100px auto;
+    border: 1px solid #317EF3;
+}
+.searchBar {
+    float: left;
+    width: 350px;
+    height: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.searchButton {
+    width: 100px;
+    height: 30px;
+    background-color: #317EF3;
+    color: white;
+    font-size: 15px;
+}
+
+ul#drop {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul#drop li {
+    margin: 0;
+    padding: 10px;
+}
+
+ul#drop li:hover {
+    background-color: darkgrey;
+    width:200px;
+}
+
+p#selectedId {
+    display: inline-block;
+}
+.countryChart{
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    top: -80px;
+    /*width: 100%;
+    height: 400px;*/
+}
+.chartPart1{
+    width: 400px;
+
+
+}
+.chartPart2{
+    position: relative;
+    left: 80px;
+    width: 400px;
+
+}
+.chartPart3{
+    position: relative;
+    left: 120px;
+    width: 400px;
+
+}
+

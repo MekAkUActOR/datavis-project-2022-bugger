@@ -17,6 +17,7 @@
   - medals2022.csv                  # dataset for Beijing 2022 Winter Olympics
 - exploratory_data_analysis
   - data_analysis.ipynb             # exploartory data analysis in Python
+  - pull_img.ipynb                  # pull athletes' images from wikipedia
 - milestones
   - milestone1.pdf                  # our report for milestone 1
   - milestone2.pdf                  # our report for milestone 2

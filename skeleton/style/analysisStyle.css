@@ -67,45 +67,33 @@ p{
 .bar{
     background: transparent;
     color: black;
-    width: 100%;
+    width: 1000px;
     height: 500px;
     position: relative;
-    top: 120px;
+    top: 80px;
    /* margin:10px;*/
     display: flex;
-    flex-direction: row;
+
 }
 .country{
-    background: whitesmoke;
+    background: white;
     color: black;
-    width: 90%;
+    width: 228%;
     margin: 10px 10px;
     height: 500px;
-    display: flex;
-
-
 }
-.discipline{
-    background: whitesmoke;
-    color: black;
-    width: 90%;
-    margin: 10px ;
-    display: flex;
-    height: 500px;
 
-
-}
 .card1{
     width: 600px;
     position: relative;
+    top: 180px;
+    left:50%;
 }
-.card2{
-    width: 600px;
-}
+
 .searchbox{
     width: 100%;
     height: 700px;
-    background:whitesmoke;
+    background:white;
     background-size:cover;
     vertical-align: middle;
     position: relative;
@@ -157,6 +145,7 @@ h3{
 
 }
 /*------------------------公共样式表----------------------------*/
+/*
 * {
     margin: 0px;
     padding: 0px;
@@ -183,7 +172,7 @@ a {
     align-items: center;
     justify-content: space-around;
 }
-
+*/
 /*------------------------本项目公共样式----------------------------*/
 
 
@@ -215,7 +204,7 @@ a {
     color: white;
     font-size: 15px;
 }
-
+/*
 ul#drop {
     list-style: none;
     margin: 0;
@@ -234,6 +223,7 @@ ul#drop li:hover {
 p#selectedId {
     display: inline-block;
 }
+*/
 .countryChart{
     flex-direction: row;
     display: flex;
@@ -243,21 +233,20 @@ p#selectedId {
     height: 400px;*/
 }
 .chartPart1{
-    width: 400px;
-
-
+    width: 30%;
+    left: 2%;
 }
 .chartPart2{
     position: relative;
-    left: 90px;
-    width: 400px;
+    left: 2%;
+    width: 35%;
    /* top: -20px;*/
 
 }
 .chartPart3{
     position: relative;
-    left: 120px;
-    width: 400px;
+    left: 5%;
+    width:25%;
 
 }
 

@@ -81,7 +81,7 @@ p{
     background: white;
     color: black;
     width: 90%;
-    height: 600px;
+    height: 500px;
     position: relative;
     left: 5%;
     top: 100px;
@@ -91,6 +91,8 @@ p{
 .context{
     background: white;
     position: relative;
+    font-size: small;
+    font-family: "Lato", sans-serif;
     left: 5%;
     top: 20%;
     color: black;
@@ -104,6 +106,7 @@ p{
     left: 30%;
     color: black;
     width: 50%;
+    height: 100%;
 
 }
 
@@ -131,11 +134,10 @@ h3{
     top: 10px;
 }
 #searchBox{
-    margin: auto;
-    margin-top: 20%;
     background: white;
     position: relative;
-    top:-50%;
+    top:5%;
+    left: 35%;
     width: 400px;
     height: 42px;
     border: 4px solid #2980b9;
@@ -169,7 +171,7 @@ h3{
 #btn{
     position: relative;
     left: 80%;
-    top: -20px;
+    top: 0%;
     border:none;
     height: 90%;
     width: 30%;
@@ -272,7 +274,7 @@ p#selectedId {
     flex-direction: row;
     display: flex;
     position: relative;
-    top: -45%;
+    top: 10%;
     /*width: 100%;
     height: 400px;*/
 }

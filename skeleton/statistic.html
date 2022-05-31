@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Analysis</title>
     <link rel="stylesheet" href="style/analysisStyle.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Serif:ital@1&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Serif:ital@1&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
 
@@ -16,7 +15,6 @@
 
  </head>
  <body >
-
 
    <div class="navbar">
        <img src="./image/olympic_icon.png" class='logo'>
@@ -38,13 +36,16 @@
    </div>
    <div class="intro">
        <h1> Analysis</h1>
-       <p> In this page, basic analysis of Winter Olympic Game. From this information, you'll see which countries are active in Winter Games, what is the most popular disciplines and what are the strength of each country.</p>
+       <p> This page shows basic analysis of Winter Olympic Game. You'll see which countries are active in Winter Games, what is the most popular disciplines and what are the strength of each country.</p>
        <section class="bar">
            <form>
-               <input type="button" id="switch" value="Discipline">
-           <div class="country">
-               <div class="card1" id="card-1"><canvas id="myChart1" ></canvas></div>
-           </div>
+               <div class="context">
+                   <h2 >Until now, there have been 24 Winter Olympic Games held. France organized the first Game in Chamonix in 1924. 2022 Beijing, China is the latest year of the Winter Olympic Games, and Italy will arrange the next one in Cortina d'Ampezzo. Winter Olympic Games awards a total of 3193 medals. Click discipline to see the games with the most significant number of medals and "Country" to see the countries that performs best in the games.</h2>
+                   <input type="button" id="switch" value="Discipline">
+               </div>
+               <div class="country">
+                   <div class="card1" id="card-1" style="height:50vh; width:35vw" ><canvas id="myChart1" ></canvas></div>
+               </div>
            </form>
        </section>
    </div>
@@ -61,28 +62,28 @@
        Chart.defaults.font.family='Lato';
        Chart.defaults.font.size=14;
        function updateButton() {
-           if (Button.value === 'Discipline') {
-               Button.value = 'Country';
+           if (Button.value === 'Country') {
+               Button.value = 'Discipline';
                if (Chart.getChart("myChart1")) {
                    Chart.getChart("myChart1").destroy();
                }
                CountryChart = new Chart(myChart1,{
                    type:'bar',
                    data:{
-                       labels:['Germany','Norway','Russia','United States','Canada','Austria','Sweden','Switzerland','Netherlands','Finland'],
+                       labels:['Norway','United States of America','Germany','Austria','Canada','Soviet Union','Finland','Sweden','Switzerland','Netherlands'],
                        datasets:[{
                            label:'Golden Medal',
                            data:[
-                               162,
-                               148,
-                               142,
-                               113,
-                               77,
-                               71,
-                               65,
-                               63,
-                               53,
-                               45
+                               368,
+                               305,
+                               240,
+                               232,
+                               199,
+                               194,
+                               167,
+                               158,
+                               153,
+                               130
                            ],
                            backgroundColor:[
                                'rgba(5, 76, 168, 0.8)',
@@ -105,8 +106,8 @@
                    options:{
                        plugins:{
                            title: {
-                               display: false,
-                               text: 'All-time Winter Olympic Games Golden Medal by country',
+                               display: true,
+                               text: 'All-time Winter Olympic Games Number of Medals by Country',
                                font:{size:20}
                            },
                            legend:{
@@ -118,7 +119,7 @@
                        layout:{
                            padding:{
                                right:0,
-                               left:50,
+                               left:0,
                                bottom:0,
                                top:0
                            }
@@ -129,39 +130,39 @@
                });
 
            } else {
-               Button.value = 'Discipline';
+               Button.value = 'Country';
                if (Chart.getChart("myChart1")) {
                    Chart.getChart("myChart1").destroy();
                }
                CountryChart = new Chart(myChart1,{
                    type:'bar',
                    data:{
-                       labels:['Germany','Norway','Russia','United States','Canada','Austria','Sweden','Switzerland','Netherlands','Finland'],
+                       labels:['Speed Skating','Alpine Skiing','Cross Country Skiing','Figure Skating','Biathlon','Luge','Freestyle Skiing','Bobsleigh','Short Track Speed Skating','Snowboard'],
                        datasets:[{
                            label:'Golden Medal',
                            data:[
-                               162,
-                               148,
-                               142,
-                               113,
-                               77,
-                               71,
-                               65,
-                               63,
-                               53,
-                               45
+                               570,
+                               512,
+                               430,
+                               369,
+                               250,
+                               200,
+                               176,
+                               175,
+                               160,
+                               154
                            ],
                            backgroundColor:[
-                               'rgba(5, 76, 168, 0.8)',
-                               'rgba(5, 92, 203, 0.8)',
-                               'rgba(2, 99, 224, 0.8)',
-                               'rgba(0, 112, 255, 0.8)',
-                               'rgba(32, 127, 249, 0.8)',
-                               'rgba(66, 147, 251, 0.8)',
-                               'rgba(103, 168, 252, 0.8)',
-                               'rgba(134, 185, 251, 0.8)',
-                               'rgba(169, 207, 255, 0.8)',
-                               'rgba(213, 231, 255, 0.8)'
+                               'rgba(195, 33, 0, 0.8)',
+                               'rgba(195, 69, 0, 0.8)',
+                               'rgba(223, 140, 2, 0.8)',
+                               'rgba(218, 223, 2, 0.8)',
+                               'rgba(158, 223, 2, 0.8)',
+                               'rgba(44, 223, 2, 0.8)',
+                               'rgba(2, 223, 135, 0.8)',
+                               'rgba(2, 177, 223, 0.8)',
+                               'rgba(2, 94, 223, 0.8)',
+                               'rgba(145, 2, 223, 0.8)'
                            ],
                            borderWidth:1,
                            bordercolor:'#777',
@@ -172,8 +173,8 @@
                    options:{
                        plugins:{
                            title: {
-                               display: false,
-                               text: 'All-time Winter Olympic Games Golden Medal by country',
+                               display: true,
+                               text: 'All-time Winter Olympic Games Number of Medals by Discipline',
                                font:{size:20}
                            },
                            legend:{
@@ -185,7 +186,7 @@
                        layout:{
                            padding:{
                                right:0,
-                               left:50,
+                               left:0,
                                bottom:0,
                                top:0
                            }
@@ -196,47 +197,26 @@
                });
            }
        }
-
-
-
    </script>
-   <section class="searchbox">
+
+
+   <section class="searchCountry">
        <h3>
            Enter the country you are interested in and see their strength!
        </h3>
-       <div id="Container">
+       <div id="searchBox">
 
-
-           <div  class="elementsContainer">
-               <div class="sea-container">
+               <div class="elementsContainer">
                    <form>
+                       <td>
                        <input type="text" name="firstName" placeholder="country name" id="first" class="blue-input">
+                       </td>
+                       <td>
                        <input type="button" id="btn" value="submit" onclick="f()">
+                       </td>
                    </form>
                    <p1 id="selectedId"></p1>
                </div>
-           </div>
-
-
-
-
-
-
-
-       <!--
-           <table class="elementsContainer">
-               <tr>
-                   <td>
-                       <input type="text" placeholder="Search Country" class="searchButton">
-                   </td>
-                   <td>
-                       <a href="#"><i class="material-icons">search</i>
-                       </a>
-                   </td>
-               </tr>
-
-           </table>
- -->
 
        </div>
        <div class="countryChart">

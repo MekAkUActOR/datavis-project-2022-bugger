@@ -113,8 +113,8 @@ p{
 .card1{
     width: 600px;
     position: relative;
-    top: 180px;
-    left:50%;
+    top: 120px;
+    left:40%;
 }
 
 .searchCountry{
@@ -171,7 +171,7 @@ h3{
 #btn{
     position: relative;
     left: 80%;
-    top: 0%;
+    top: -30px;
     border:none;
     height: 90%;
     width: 30%;
@@ -181,6 +181,12 @@ h3{
     font-family: "Nunito";
     color: #424242;
     font-weight: 500;
+}
+.footer{
+    background: #008CBA;
+}
+h4{
+    front
 }
 /*
 .search:focus{

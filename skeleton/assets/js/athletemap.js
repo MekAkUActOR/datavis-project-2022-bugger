@@ -8,9 +8,9 @@ var radius = 14;
 var athleteMap = L.map('map-holder', {
 	zoom: 2,
 	maxZoom: 19,
-	noWrap: true,
 	scrollWheelZoom: true,
 	zoomControl: false,
+	noWrap: true,
 	zoomAnimation: true,
 	markerZoomAnimation: true,
 	maxBoundsViscosity: 0.8,
@@ -60,8 +60,14 @@ athleteMap.on('popupopen', function (e) {
 
 function setUpFrame () {
 	var frame = window.frames['frame-' + curr_value.id];
+	console.log(curr_value.id)
 	frame.populate(curr_value);
 }
+
+var myStyle = {
+	"weight": 1,
+	"opacity": 0.65
+};
 
 var markers = [];
 
@@ -114,8 +120,6 @@ function updateMarkers (disciplineConstrain, gameyearFrom, gameyearTo) {
 
 var minimumYear = 1890;
 var maximumYear = new Date().getFullYear() //Use the current year, but check in dataset anyway in case of browser issues
-var fromValue = document.getElementById('from');
-var toValue = document.getElementById('to');
 var slider = null;
 
 const data = d3.csv("./athleteFullInformation.csv");
@@ -141,6 +145,8 @@ data.then(function (data) {
 		popupContent.width = w * 0.4;
 		popupContent.height = h * 0.4;
 		popupContent.id = d.id;
+		console.log(popupContent.name)
+		console.log(popupContent.id)
 
 		class_img = 'image-icon_d';
 
@@ -212,6 +218,9 @@ var sidebar = L.control.sidebar('sidebar');
 athleteMap.addControl(sidebar);
 var zoomControl = L.control.zoom({ position: 'topright' }).addTo(athleteMap);
 
+var fromValue = document.getElementById('from');
+var toValue = document.getElementById('to');
+
 athleteMap.on("zoomstart", function () {
 	let selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
 	updateMarkers(selected, fromValue.value, toValue.value);
@@ -271,5 +280,4 @@ toValue.addEventListener('change', function (event) {
 	var selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
 	updateMarkers(selected, fromValue.value, toValue.value);
 });
-
 

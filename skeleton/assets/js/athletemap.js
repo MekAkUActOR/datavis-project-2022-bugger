@@ -1,6 +1,10 @@
 var w = $(window).width();
 var h = $(window).height();
 
+var img_w = $(window).width() / 8.0;
+var img_h = $(window).height() / 4.0;
+var radius = 14;
+
 var athleteMap = L.map('map-holder', {
 	zoom: 2,
 	maxZoom: 19,
@@ -18,6 +22,7 @@ var athleteMap = L.map('map-holder', {
 
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 19,
 	bounds: [
@@ -45,9 +50,7 @@ $(window).resize(function () {
 athleteMap.on('popupopen', function (e) {
 	sidebar.close();
 	curr_marker = e.target._popup._source;
-
 	var px = athleteMap.project(e.target._popup._latlng);
-
 	px.y -= e.target._popup._container.clientHeight / 3;
 	athleteMap.panTo(athleteMap.unproject(px), { animate: true });
 	athleteMap.setView(athleteMap.unproject(px), athleteMap.getZoom() + 1);
@@ -57,17 +60,43 @@ athleteMap.on('popupopen', function (e) {
 
 function setUpFrame () {
 	var frame = window.frames['frame-' + curr_value.id];
+	console.log(curr_value.id)
 	frame.populate(curr_value);
 }
 
+var myStyle = {
+	"weight": 1,
+	"opacity": 0.65
+};
+
 var markers = [];
 
-function updateMarkers () {
+function updateMarkers (disciplineConstrain, gameyearFrom, gameyearTo) {
 	maxActive = 50;
 	currActive = 0;
 	markers.forEach(function (d, i) {
 		var activate = true;
+		// Discipline filter
+		if (disciplineConstrain.length > 0) {
+			if (!disciplineConstrain.includes(d.data.discipline)) {
+				activate = false;
+			}
+		}
 
+		//gameyear fromto filter
+		if (gameyearFrom != null) {
+			if (parseInt(d.data.gameyear) < gameyearFrom) {
+				activate = false;
+			}
+		}
+
+		if (gameyearTo != null) {
+			if (parseInt(d.data.gameyear) > gameyearTo) {
+				activate = false;
+			}
+		}
+
+		//Deactivate if not on the visible part of map
 		if (!athleteMap.getBounds().contains(d.marker.getLatLng())) {
 			activate = false;
 		}
@@ -89,21 +118,35 @@ function updateMarkers () {
 	});
 }
 
-const data = d3.csv("./athleteInformation.csv");
+var minimumYear = 1890;
+var maximumYear = new Date().getFullYear() //Use the current year, but check in dataset anyway in case of browser issues
+var slider = null;
+
+const data = d3.csv("./athleteFullInformation.csv");
 data.then(function (data) {
+
+	var discipline = [];
 
 	data.forEach(function (d, i) {
 		var longitude = parseFloat(d.longitude) + Math.random()*2;
 		var latitude = parseFloat(d.latitude) + Math.random()*2;
-		var img = "<img src='../../img/Olympic_flag.svg' />";
+		if (d.pic.search("wiki") != -1) {
+			var imgurl = d.pic;
 
-		popup = document.createElement("iframe");
-		popup.style.overflow = "hidden";
-		popup.name = d.slug_game + d.event + d.medal_type;
-		popup.src = "assets/html/popup.html";
-		popup.width = w * 0.4;
-		popup.height = h * 0.4;
-		popup.id = d.slug_game + d.event + d.medal_type;
+		} else {
+			var imgurl = '../../img/Olympic_flag.svg';
+		}
+		var img = "<img src=" + imgurl + " loading='lazy' />";
+
+		popupContent = document.createElement("iframe");
+		popupContent.style.overflow = "hidden";
+		popupContent.name = 'frame-' + d.id;
+		popupContent.src = "assets/html/popup.html";
+		popupContent.width = w * 0.4;
+		popupContent.height = h * 0.4;
+		popupContent.id = d.id;
+		console.log(popupContent.name)
+		console.log(popupContent.id)
 
 		class_img = 'image-icon_d';
 
@@ -116,7 +159,7 @@ data.then(function (data) {
 			}),
 			title: d.athlete_name,
 			data_object: d,
-		}).bindPopup(popup, {
+		}).bindPopup(popupContent, {
 			maxWidth: "auto"
 		});
 
@@ -125,16 +168,116 @@ data.then(function (data) {
 			'marker': marker,
 			'active': false
 		});
+		minimumYear = Math.min(minimumYear, parseInt(d.gameyear));
+		maximumYear = Math.max(maximumYear, parseInt(d.gameyear));
+		discipline.push(d.discipline);
 	});
-	updateMarkers();
+
+	var disciplineUnique = discipline.filter(function (value, index, self) {
+		return self.indexOf(value) === index;
+	});
+	var disciplineReady = disciplineUnique.map(function (value, index, self) {
+		return { id: index, text: value };
+	});
+
+	$('#discipline-selector').select2({
+		placeholder: 'Select an option',
+		width: 'resolve',
+		data: disciplineReady,
+		dropdownParent: $(".sidebar-content")
+	});
+
+	updateMarkers([], minimumYear, maximumYear);
+
+	slider = document.getElementById('Timespan-slider');
+	noUiSlider.create(slider, {
+		start: [minimumYear, maximumYear],
+		connect: true,
+		range: {
+			'min': minimumYear,
+			'max': maximumYear
+		},
+		format: wNumb({
+			decimals: 0
+		})
+	});
+
+	slider.noUiSlider.on('update', function (values, handle) {
+		if (handle) {
+			toValue.value = values[handle];
+		} else {
+			fromValue.value = values[handle];
+		}
+
+		var selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+		updateMarkers(selected, fromValue.value, toValue.value);
+	});
 });
 
 var sidebar = L.control.sidebar('sidebar');
 athleteMap.addControl(sidebar);
+var zoomControl = L.control.zoom({ position: 'topright' }).addTo(athleteMap);
+
+var fromValue = document.getElementById('from');
+var toValue = document.getElementById('to');
+
 athleteMap.on("zoomstart", function () {
-	updateMarkers();
+	let selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+	updateMarkers(selected, fromValue.value, toValue.value);
 });
 athleteMap.on("moveend", function () {
-	updateMarkers();
+	let selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+	updateMarkers(selected, fromValue.value, toValue.value);
+});
+
+var fastForwarder = null;
+var fastForwarderDiff = 0;
+var velocity = 1;
+document.getElementById("Timespan-play").addEventListener("click", function () {
+	if (fastForwarder == null) {
+		fastForwarderDiff = parseInt(toValue.value) - parseInt(fromValue.value);
+		$("#play-icon").removeClass("fa-play").addClass("fa-pause")
+		fastForwarder = setInterval(function () {
+			toValue.value = Math.min(maximumYear, parseInt(toValue.value) + velocity);
+			fromValue.value = toValue.value - fastForwarderDiff;
+			var selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+			slider.noUiSlider.setHandle(0, fromValue.value);
+			slider.noUiSlider.setHandle(1, toValue.value);
+			updateMarkers(selected, fromValue.value, toValue.value);
+			if(toValue.value == maximumYear) {
+				clearInterval(fastForwarder);
+				$("#play-icon").removeClass("fa-pause").addClass("fa-play")
+				fastForwarder = null;
+			}
+		}, 100);
+	} else {
+		clearInterval(fastForwarder);
+		$("#play-icon").removeClass("fa-pause").addClass("fa-play")
+		fastForwarder = null;
+	}
+});
+
+document.getElementById("Timespan-backward").addEventListener("click", function () {
+	velocity = Math.max(1, velocity/2)
+	document.getElementById("vel").innerHTML = "x " + velocity
+})
+
+document.getElementById("Timespan-forward").addEventListener("click", function () {
+	velocity = Math.min(8192, velocity*2)
+	document.getElementById("vel").innerHTML = "x " + velocity
+})
+
+
+fromValue.addEventListener('change', function (event) {
+	slider.noUiSlider.setHandle(0, event.target.value);
+
+	var selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+	updateMarkers(selected, fromValue.value, toValue.value);
+});
+
+toValue.addEventListener('change', function (event) {
+	slider.noUiSlider.setHandle(1, event.target.value);
+	var selected = $('#discipline-selector').find(':selected').toArray().map(option => option.text);
+	updateMarkers(selected, fromValue.value, toValue.value);
 });
 

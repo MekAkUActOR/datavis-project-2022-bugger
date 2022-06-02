@@ -2,6 +2,7 @@ var arr = ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Bar
 var search = document.getElementsByClassName("blue-input")[0];
 var selectedId = document.getElementById("selectedId")
 
+
 function showList(){
     var res = searchByIndexOf(search.value,arr);
     for(var i=0;i<res.length;i++){

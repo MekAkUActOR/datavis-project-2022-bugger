@@ -70,3 +70,9 @@ To check our prototype website design, see the following:
 ## Milestone 3 (3rd June, 5pm)
 
 **80% of the final grade**
+
+[Our website](https://haoxinseu.github.io/winterolympic.github.io/)
+
+[Process book](milestones/process_book.pdf)
+
+[Screencast](#)

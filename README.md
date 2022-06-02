@@ -25,7 +25,7 @@
 - skeleton                          # source code for our design
   - assets                          # sources code (html, js and css)
   - images                          # image files
-  - athleteFullInformation.csv      # dataset used in the project
+  - athleteFullInformation.csv      # dataset (processed) used in the project
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
   - statistic.html                  # statistical data

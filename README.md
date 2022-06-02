@@ -62,7 +62,7 @@ To check our prototype website design, see the following:
 - skeleton                         
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
-  - statistics.html                      # statistical data
+  - statistics.html                 # statistical data
 ```
 
 
@@ -70,7 +70,9 @@ To check our prototype website design, see the following:
 
 **80% of the final grade**
 
-[Our website](https://haoxinseu.github.io/winterolympic.github.io/)
+To access our website, clicking on this URL: [Our website](https://haoxinseu.github.io/winterolympic.github.io/)
+
+Other materials:
 
 [Process book](milestones/process_book.pdf)
 

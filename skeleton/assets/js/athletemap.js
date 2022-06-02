@@ -134,7 +134,7 @@ data.then(function (data) {
 			var imgurl = d.pic;
 
 		} else {
-			var imgurl = '../../img/Olympic_flag.svg';
+			var imgurl = 'https://flyclipart.com/thumb2/logo-olympics-icon-97336.png';
 		}
 		var img = "<img src=" + imgurl + " loading='lazy' />";
 

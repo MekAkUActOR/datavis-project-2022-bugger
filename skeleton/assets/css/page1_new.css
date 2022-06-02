@@ -163,14 +163,14 @@ button{
 .details_card{
     background-color: white;
     width: 400px;
-    height:400px;
+    height: 20%;
     position: absolute;
     left: 50px;
     top:450px;
 }
 .details_instruction{
     background-color: white;
-    width: 1400px;
+    width: 67%;
     height:400px;
     position: absolute;
     left: 500px;

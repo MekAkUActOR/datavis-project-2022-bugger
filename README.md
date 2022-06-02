@@ -74,4 +74,4 @@ To check our prototype website design, see the following:
 
 [Process book](milestones/process_book.pdf)
 
-[Screencast](#)
+[Screencast](https://youtu.be/HnWyEayLVI8)

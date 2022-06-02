@@ -74,6 +74,4 @@ To access our website, clicking on this URL: [Our website](https://haoxinseu.git
 
 Other materials:
 
-[Process book](milestones/process_book.pdf)
-
-[Screencast](https://youtu.be/HnWyEayLVI8)
+[Process book](milestones/process_book.pdf) & [Screencast](https://youtu.be/HnWyEayLVI8)

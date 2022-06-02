@@ -6,7 +6,7 @@
 | Sun Haoxin | 336556 |
 | Wu Yujie | 334899 |
 
-[Milestone 1](milestones/milestone1.pdf) • [Milestone 2](milestones/milestone2.pdf) • [Milestone 3](#milestone-3)
+[Milestone 1](milestones/milestone1.pdf) • [Milestone 2](milestones/milestone2.pdf) • [Milestone 3](milestones/process_book.pdf)
 
 ## Project Structure
 
@@ -28,7 +28,7 @@
   - athleteFullInformation.csv      # dataset used in the project
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
-  - statistic.html                      # statistical data
+  - statistic.html                  # statistical data
 - README.md
 ```
 
@@ -58,7 +58,6 @@ To run our exploratory data analysis notebook, the following libraries are neede
 [Milestone 2 - Report](milestones/milestone2.pdf)
 
 To check our prototype website design, see the following:
-(**NOTE**: page2.html requires the dataset (.csv file), please use *WebStorm* to open and view this page (we will make further improvement in Milestone 3, e.g. upload these pages on github.io))
 ```
 - skeleton                         
   - index.html                      # basic information about Winter Olympics

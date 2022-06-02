@@ -21,17 +21,15 @@
 - milestones
   - milestone1.pdf                  # our report for milestone 1
   - milestone2.pdf                  # our report for milestone 2
+  - process_book.pdf                # our process book for milestone 3
 - skeleton                          # source code for our design
-  - assets                          
-  - image                           # images needed for the website
-  - images
-  - img
-  - scripts
-  - style
-  - athleteInformation.csv
+  - assets                          # sources code (html, js and css)
+  - images                          # image files
+  - athleteFullInformation.csv      # dataset used in the project
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
-  - page3.html                      # statistical data
+  - statistic.html                      # statistical data
+- README.md
 ```
 
 
@@ -65,7 +63,7 @@ To check our prototype website design, see the following:
 - skeleton                         
   - index.html                      # basic information about Winter Olympics
   - page2.html                      # interactive map
-  - page3.html                      # statistical data
+  - statistics.html                      # statistical data
 ```
 
 
